@@ -68,7 +68,7 @@ public class CoolWeatherDB {
 			db.insert("City", null, values);
 		}
 	}
-	public List<City> loadCity(int provinceId) {
+	public List<City> loadCities(int provinceId) {
 		List<City> list = new ArrayList<City>();
 		Cursor cursor = db.query("City", null, "province_id = ?", new String[] {String.valueOf(provinceId)},null, null, null);
 		if(cursor.moveToFirst()) {
@@ -98,7 +98,7 @@ public class CoolWeatherDB {
 			
 		}
 	}
-	public List<County> loadCounty(int cityId) {
+	public List<County> loadCounties(int cityId) {
 		List<County> list = new ArrayList<County>();
 		Cursor cursor = db.query("County", null, "city_id = ?", new String[] {String.valueOf(cityId)}, null, null, null);
 		if(cursor.moveToFirst()) {
